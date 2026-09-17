@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ACT — Auditory Core Test</title>
+  <meta name="description" content="The Auditory Core Test is an open-source platform for remote cognitive, symptom, and vocal-affect assessment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23073363'/%3E%3Cpath d='M18 39c5-2 7-14 14-14s9 12 14 14M22 33c4-2 5-12 10-12s6 10 10 12M27 39h10' fill='none' stroke='%236dd9cf' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root{--navy:#073363;--ink:#102842;--blue:#0c5b9b;--aqua:#6dd9cf;--mist:#eaf8f6;--sky:#eef5fb;--white:#fff;--muted:#5c6d7d;--line:#d8e5ec;--shadow:0 24px 70px rgba(7,51,99,.12)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--white);line-height:1.6}a{color:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topline{height:6px;background:linear-gradient(90deg,var(--navy),var(--blue) 60%,var(--aqua))}header{height:82px;display:flex;align-items:center;background:rgba(255,255,255,.95);border-bottom:1px solid rgba(216,229,236,.75);position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}nav{display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.mark{width:44px;height:44px;border-radius:13px;background:var(--navy);display:grid;place-items:center;box-shadow:0 7px 18px rgba(7,51,99,.2)}.mark svg{width:28px}.brand b{display:block;font-size:1.05rem;letter-spacing:.01em}.brand small{display:block;color:var(--muted);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}.navlinks{display:flex;align-items:center;gap:30px}.navlinks a{text-decoration:none;font-size:.92rem;font-weight:600;color:#344c63}.navlinks a:hover{color:var(--blue)}.nav-cta{padding:10px 17px;border:1px solid var(--navy);border-radius:999px;color:var(--navy)!important}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#f7fbff 0%,#fff 48%,#eaf9f7 100%);padding:92px 0 82px}.hero:after{content:"";position:absolute;width:520px;height:520px;right:-210px;top:-210px;border:1px solid rgba(12,91,155,.13);border-radius:50%;box-shadow:0 0 0 70px rgba(109,217,207,.05),0 0 0 140px rgba(12,91,155,.025)}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:72px;align-items:center;position:relative;z-index:1}.eyebrow{display:flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:700;color:var(--blue)}.eyebrow:before{content:"";width:28px;height:2px;background:var(--aqua)}h1{font-family:"Newsreader",serif;font-size:clamp(3.5rem,6vw,6.2rem);line-height:.94;letter-spacing:-.045em;margin:20px 0 26px;color:var(--navy);font-weight:600}.hero p{font-size:1.18rem;color:#445b70;max-width:630px;margin:0 0 34px}.actions{display:flex;gap:13px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:9px;padding:14px 21px;font-weight:700;text-decoration:none;border:1px solid var(--navy);font-size:.94rem}.btn.primary{background:var(--navy);color:white;box-shadow:0 10px 25px rgba(7,51,99,.18)}.btn.secondary{background:white;color:var(--navy)}.btn:hover{transform:translateY(-1px)}
+    .sound-card{background:var(--navy);border-radius:28px;padding:34px;color:white;box-shadow:var(--shadow);position:relative;overflow:hidden;min-height:405px;display:flex;flex-direction:column;justify-content:space-between}.sound-card:before{content:"";position:absolute;inset:auto -80px -120px auto;width:330px;height:330px;border-radius:50%;background:rgba(109,217,207,.13)}.sound-top{display:flex;justify-content:space-between;align-items:center}.sound-top span{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:#aed1e7}.mic{width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center}.mic svg{width:24px}.wave{height:150px;display:flex;align-items:center;justify-content:center;gap:5px}.wave i{display:block;width:4px;border-radius:4px;background:var(--aqua);height:var(--h);opacity:var(--o)}.sound-card h2{font-family:"Newsreader",serif;font-size:2rem;line-height:1.08;margin:0 0 9px}.sound-card p{font-size:.91rem;color:#c4d8e7;margin:0;max-width:350px}.status{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;font-weight:700;letter-spacing:.05em;margin-top:20px}.status i{width:8px;height:8px;background:var(--aqua);border-radius:50%}
+    .intro{padding:86px 0 58px}.section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:48px;margin-bottom:42px}.section-head h2{font-family:"Newsreader",serif;color:var(--navy);font-size:clamp(2.35rem,4vw,3.5rem);line-height:1.02;margin:0}.section-head p{margin:5px 0 0;color:var(--muted);font-size:1.05rem;max-width:670px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:18px;padding:28px;background:#fff;transition:.2s}.card:hover{box-shadow:0 16px 45px rgba(7,51,99,.08);transform:translateY(-3px)}.icon{width:46px;height:46px;border-radius:12px;background:var(--sky);display:grid;place-items:center;color:var(--blue);margin-bottom:30px}.icon svg{width:23px}.card:nth-child(2) .icon{background:var(--mist);color:#177d75}.card:nth-child(3) .icon{background:#f3f1fb;color:#6658a8}.card .number{font-size:.71rem;letter-spacing:.13em;font-weight:700;color:#8a9aa8}.card h3{font-size:1.15rem;margin:9px 0 9px;color:var(--navy)}.card p{font-size:.92rem;color:var(--muted);margin:0}
+    .animals{padding:74px 0 92px}.test-panel{background:linear-gradient(105deg,var(--navy),#0b497d);border-radius:26px;color:white;display:grid;grid-template-columns:1.2fr .8fr;overflow:hidden}.test-copy{padding:58px}.test-copy .eyebrow{color:var(--aqua)}.test-copy h2{font-family:"Newsreader",serif;font-size:3.1rem;line-height:1.04;margin:15px 0}.test-copy p{color:#c6dae8;max-width:590px}.test-copy .btn{margin-top:15px;background:white;color:var(--navy);border-color:white}.test-demo{background:rgba(255,255,255,.07);padding:38px;display:flex;align-items:center}.mini{width:100%;background:white;color:var(--ink);border-radius:17px;padding:24px;box-shadow:0 18px 55px rgba(0,0,0,.2)}.mini-top{display:flex;justify-content:space-between;font-size:.72rem;text-transform:uppercase;font-weight:700;letter-spacing:.08em;color:#718291}.timer{color:var(--blue);font-size:2.65rem;font-weight:600;letter-spacing:-.05em;margin:22px 0 5px}.meter{display:flex;height:42px;align-items:center;gap:3px}.meter i{width:3px;background:var(--blue);height:var(--h);border-radius:3px}.record{margin-top:20px;width:100%;border:0;background:var(--sky);color:var(--navy);padding:13px;border-radius:8px;font-weight:700}.record:disabled{opacity:.72;cursor:not-allowed}.soon{text-align:center;color:#7a8c9b;font-size:.72rem;margin-top:8px}
+    footer{border-top:1px solid var(--line);padding:30px 0;color:#687b8c}.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:.81rem}.footer-brand{font-weight:700;color:var(--navy)}
+    @media(max-width:850px){.navlinks a:not(.nav-cta){display:none}.hero{padding:65px 0}.hero-grid,.section-head,.test-panel{grid-template-columns:1fr}.hero-grid{gap:45px}.sound-card{min-height:355px}.cards{grid-template-columns:1fr}.section-head{gap:18px}.test-copy{padding:40px 30px}.test-demo{padding:30px}.footer-row{align-items:flex-start;flex-direction:column}.brand small{display:none}}
+    @media(max-width:480px){.wrap{width:min(100% - 28px,1160px)}header{height:70px}.brand b{font-size:.92rem}.nav-cta{padding:8px 12px;font-size:.8rem}h1{font-size:3.5rem}.hero p{font-size:1.03rem}.sound-card{padding:26px}.test-copy h2{font-size:2.45rem}.actions{flex-direction:column}.btn{width:100%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="ACT home">
+        <span class="mark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 21c4-1.4 5.4-10 11-10s7 8.6 11 10M8.5 16.5C11 15 12 8 16 8s5 7 7.5 8.5M12 21h8" stroke="#6dd9cf" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+        <span><b>Auditory Core Test</b><small>ACT Research Platform</small></span>
+      </a>
+      <div class="navlinks">
+        <a href="#about">About</a><a href="#assessments">Assessments</a><a href="#research">For researchers</a><a class="nav-cta" href="#research">Project preview</a>
+      </div>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Open-source neuropsychology</div>
+          <h1>Listen.<br>Measure.<br>Understand.</h1>
+          <p>ACT brings cognitive assessment, symptom monitoring, and vocal-affect measures together in one accessible research platform—designed for remote, longitudinal studies.</p>
+          <div class="actions"><a class="btn primary" href="#assessments">Explore assessments <span aria-hidden="true">→</span></a><a class="btn secondary" href="#research">For research teams</a></div>
+        </div>
+        <div class="sound-card" aria-label="Illustration of an audio assessment">
+          <div class="sound-top"><span>Voice-based assessment</span><div class="mic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="3" width="8" height="12" rx="4" stroke="white" stroke-width="1.8"/><path d="M5.5 11.5a6.5 6.5 0 0013 0M12 18v3M9 21h6" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></div></div>
+          <div class="wave" aria-hidden="true">
+            <i style="--h:18px;--o:.45"></i><i style="--h:34px;--o:.55"></i><i style="--h:62px;--o:.7"></i><i style="--h:92px;--o:.9"></i><i style="--h:46px;--o:.65"></i><i style="--h:76px;--o:.8"></i><i style="--h:122px;--o:1"></i><i style="--h:84px;--o:.85"></i><i style="--h:51px;--o:.65"></i><i style="--h:108px;--o:.95"></i><i style="--h:68px;--o:.75"></i><i style="--h:39px;--o:.6"></i><i style="--h:20px;--o:.45"></i>
+          </div>
+          <div><h2>Assessment that meets participants where they are.</h2><p>Standardized tasks delivered remotely, with voice responses captured for automated transcription and scoring.</p><div class="status"><i></i> FRONT-END PROTOTYPE</div></div>
+        </div>
+      </div>
+    </section>
+    <section class="intro" id="about">
+      <div class="wrap">
+        <div class="section-head"><h2>A clearer view of cognition and affect.</h2><p>PTSD can affect memory, attention, executive function, and everyday life. ACT is being developed to make repeated measurement easier—reducing travel and administrative burden while expanding access to research.</p></div>
+        <div class="cards" id="assessments">
+          <article class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10a2 2 0 012 2v14H5V6a2 2 0 012-2zM8 9h8M8 13h6M8 17h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><span class="number">01 / SYMPTOMS</span><h3>Self-report measures</h3><p>Track PTSD symptoms alongside anxiety and depression using established research instruments.</p></article>
+          <article class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M8 7a4 4 0 118 0c0 1-.35 1.86-1 2.5 1.8.95 3 2.8 3 5v2.5H6v-2.5c0-2.2 1.2-4.05 3-5A3.5 3.5 0 018 7zM9 21h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><span class="number">02 / COGNITION</span><h3>Verbal cognitive tests</h3><p>Assess fluency, working memory, episodic memory, executive function, and attention remotely.</p></article>
+          <article class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 12h3l2-6 3.5 12L15 8l2 7h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="number">03 / AFFECT</span><h3>Vocal-affect measures</h3><p>Study acoustic features of speech as complementary biological signals of participants’ affective states.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="animals" id="research">
+      <div class="wrap test-panel">
+        <div class="test-copy"><div class="eyebrow">First assessment module</div><h2>Animal Naming Test</h2><p>Participants name as many animals as possible in one minute. The planned module will securely record a response, transcribe it, identify valid unique animal names, and return a transparent score for researcher review.</p><button class="btn" type="button" onclick="document.querySelector('.soon').textContent='The interactive recorder will be enabled when the secure scoring service is connected.'">View test preview <span aria-hidden="true">→</span></button></div>
+        <div class="test-demo"><div class="mini"><div class="mini-top"><span>Animal naming</span><span>Practice</span></div><div class="timer">01:00</div><div>Say as many animal names as you can.</div><div class="meter" aria-hidden="true"><i style="--h:9px"></i><i style="--h:19px"></i><i style="--h:31px"></i><i style="--h:16px"></i><i style="--h:38px"></i><i style="--h:25px"></i><i style="--h:12px"></i><i style="--h:33px"></i><i style="--h:20px"></i><i style="--h:9px"></i><i style="--h:27px"></i><i style="--h:15px"></i></div><button class="record" disabled>Recorder coming soon</button><div class="soon">Secure backend connection is the next development phase.</div></div></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-row"><span class="footer-brand">ACT · Auditory Core Test</span><span>Open-source tools for accessible, longitudinal neuropsychological research.</span><span>Research prototype</span></div></footer>
+</body>
+</html>
