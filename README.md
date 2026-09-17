@@ -1,6 +1,13 @@
 # Auditory Core Test (ACT)
 
-The Auditory Core Test is an open-source platform under development for remote assessment of cognition, psychiatric symptoms, and vocal affect.
+The Auditory Core Test is a research software platform under development at the University of California, Los Angeles for remote assessment of cognition, psychiatric symptoms, and vocal affect.
+
+## Project information
+
+- **Principal Investigator:** Ariana Anderson
+- **Institution:** University of California, Los Angeles (UCLA)
+- **Research network:** National Neuropsychology Network (NNN)
+- **Funding:** Brain & Behavior Research Foundation (BBRF), Grant #34030
 
 ## Current status
 
